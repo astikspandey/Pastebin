@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encrypted Pastebin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Encrypted Pastebin</h1>
+      <p class="subtitle">Secure, encrypted data storage</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="store">Store Data</button>
+      <button class="tab-btn" data-tab="retrieve">Retrieve Data</button>
+      <button class="tab-btn" data-tab="register">Register Site</button>
+      <button class="tab-btn" data-tab="test">Test Connection</button>
+    </div>
+
+    <div class="tab-content">
+      <!-- Store Data Tab -->
+      <div id="store" class="tab-pane active">
+        <h2>Store Encrypted Data</h2>
+        <form id="storeForm">
+          <div class="form-group">
+            <label for="storeLocation">Location/Key:</label>
+            <input type="text" id="storeLocation" placeholder="e.g., user_data, settings, etc." required>
+            <small>A unique identifier for this data</small>
+          </div>
+          <div class="form-group">
+            <label for="storeData">Data (JSON):</label>
+            <textarea id="storeData" rows="10" placeholder='{"name": "John", "email": "john@example.com"}' required></textarea>
+            <small>Enter data as valid JSON</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Store Data</button>
+        </form>
+        <div id="storeResult" class="result"></div>
+      </div>
+
+      <!-- Retrieve Data Tab -->
+      <div id="retrieve" class="tab-pane">
+        <h2>Retrieve Encrypted Data</h2>
+        <form id="retrieveForm">
+          <div class="form-group">
+            <label for="retrieveLocation">Location/Key (optional):</label>
+            <input type="text" id="retrieveLocation" placeholder="Leave empty to retrieve all data">
+            <small>Specify a location to retrieve specific data, or leave empty for all</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Retrieve Data</button>
+        </form>
+        <div id="retrieveResult" class="result"></div>
+      </div>
+
+      <!-- Register Site Tab -->
+      <div id="register" class="tab-pane">
+        <h2>Register Site with Pastebin</h2>
+        <p>Register this site with the pastebin service. Only needs to be done once.</p>
+        <button id="registerBtn" class="btn btn-primary">Register Now</button>
+        <div id="registerResult" class="result"></div>
+      </div>
+
+      <!-- Test Connection Tab -->
+      <div id="test" class="tab-pane">
+        <h2>Test Connection</h2>
+        <p>Test the handshake protocol with the pastebin service.</p>
+        <button id="testBtn" class="btn btn-primary">Test Handshake</button>
+        <div id="testResult" class="result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

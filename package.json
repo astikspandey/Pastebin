@@ -1,0 +1,21 @@
+{
+  "name": "encrypted-pastebin",
+  "version": "1.0.0",
+  "description": "Encrypted pastebin system with secure handshake protocol",
+  "scripts": {
+    "install-all": "cd website && npm install && cd ../pastebin && npm install",
+    "start-pastebin": "cd pastebin && npm start",
+    "start-website": "cd website && npm start",
+    "dev-pastebin": "cd pastebin && npm run dev",
+    "dev-website": "cd website && npm run dev"
+  },
+  "keywords": [
+    "encryption",
+    "pastebin",
+    "secure",
+    "aes-256",
+    "supabase"
+  ],
+  "author": "",
+  "license": "MIT"
+}
